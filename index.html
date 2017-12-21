@@ -25,30 +25,8 @@
 
 <div class="row">
 
-    <!-- Sidebar -->
-
-    <aside class="large-3 columns">
-
-        <h4>Posts</h4>
-        <ul id="posts" class="posts nav">
-            
-            <li><a href="./2015/01/01/first-entry.html">First Entry</a></li>
-            
-        </ul>
-
-        <div class="panel">
-            <h5>Featured</h5>
-
-            <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon
-                nulla pork belly cupidatat meatloaf cow.</p>
-        </div>
-
-    </aside>
-
-    <!-- End Sidebar -->
-    
     <!-- Main Blog Content -->
-    <div class="large-9 columns" role="content">
+    <div class="large-12 columns" role="content">
 
         <div class="sect1">
 <h2 id="ouest_france_code_conventions"><a class="link" href="#ouest_france_code_conventions">Ouest-France code conventions</a></h2>
@@ -103,75 +81,6 @@ interpreted as described in <a href="https://www.ietf.org/rfc/rfc2119.txt">RFC
 </div>
 <div class="sect2">
 <h3 id="100"><a class="link" href="#100"><span class="must-keyword"><strong>Must:</strong></span> Follow API First Principle</a></h3>
-<!-- Adds rule id as a postfix to all rule titles -->
-<script>
-var ruleIdRegEx = /(\d)+/;
-var h3headers = document.getElementsByTagName("h3");
-for (var i = 0; i < h3headers.length; i++) {
-    var header = h3headers[i];
-    if (header.id && header.id.match(ruleIdRegEx)) {
-        var a = header.getElementsByTagName("a")[0]
-        a.innerHTML += " [" + header.id + "]";
-    }
-}
-</script>
-
-<!-- Add table of contents anchor and remove document title -->
-<script>
-var toc = document.getElementById('toc');
-var div = document.createElement('div');
-div.id = 'table-of-contents';
-toc.parentNode.replaceChild(div, toc);
-div.appendChild(toc);
-var ul = toc.childNodes[3];
-ul.removeChild(ul.childNodes[1]);
-</script>
-
-<!-- Adds sidebar navigation -->
-<script>
-var header = document.getElementById('header');
-var nav = document.createElement('div');
-nav.id = 'toc';
-nav.classList.add('toc2');
-var title = document.createElement('div');
-title.id = 'toctitle';
-
-var link = document.createElement('a');
-link.innerText = 'API Guidelines';
-link.href = '#';
-
-title.append(link);
-nav.append(title);
-
-var ul = document.createElement('ul');
-ul.classList.add('sectlevel1');
-
-var link = document.createElement('a');
-link.innerHTML = 'Table of Contents';
-link.href = '#table-of-contents';
-li = document.createElement('li');
-li.append(link);
-ul.append(li);
-
-var link, li;
-var h2headers = document.getElementsByTagName('h2');
-for (var i = 1; i < h2headers.length; i++) {
-    var a = h2headers[i].getElementsByTagName("a")[0];
-    if (a !== undefined) {
-        link = document.createElement('a');
-        link.innerHTML = a.innerHTML;
-        link.href = a.hash;
-        li = document.createElement('li');
-        li.append(link);
-        ul.append(li);
-    }
-}
-
-document.body.classList.add('toc2');
-document.body.classList.add('toc-left');
-nav.append(ul);
-header.prepend(nav);
-</script>
 
 </div>
 </div>
@@ -192,7 +101,7 @@ header.prepend(nav);
         <hr>
         <div class="row">
             <div class="large-12 columns">
-                <p>Footer</p>
+                <p>Ouest-France</p>
             </div>
         </div>
     </div>
@@ -212,62 +121,6 @@ for (var i = 0; i < h3headers.length; i++) {
 }
 </script>
 
-<!-- Add table of contents anchor and remove document title -->
-<script>
-var toc = document.getElementById('toc');
-var div = document.createElement('div');
-div.id = 'table-of-contents';
-toc.parentNode.replaceChild(div, toc);
-div.appendChild(toc);
-var ul = toc.childNodes[3];
-ul.removeChild(ul.childNodes[1]);
-</script>
-
-<!-- Adds sidebar navigation -->
-<script>
-var header = document.getElementById('header');
-var nav = document.createElement('div');
-nav.id = 'toc';
-nav.classList.add('toc2');
-var title = document.createElement('div');
-title.id = 'toctitle';
-
-var link = document.createElement('a');
-link.innerText = 'API Guidelines';
-link.href = '#';
-
-title.append(link);
-nav.append(title);
-
-var ul = document.createElement('ul');
-ul.classList.add('sectlevel1');
-
-var link = document.createElement('a');
-link.innerHTML = 'Table of Contents';
-link.href = '#table-of-contents';
-li = document.createElement('li');
-li.append(link);
-ul.append(li);
-
-var link, li;
-var h2headers = document.getElementsByTagName('h2');
-for (var i = 1; i < h2headers.length; i++) {
-    var a = h2headers[i].getElementsByTagName("a")[0];
-    if (a !== undefined) {
-        link = document.createElement('a');
-        link.innerHTML = a.innerHTML;
-        link.href = a.hash;
-        li = document.createElement('li');
-        li.append(link);
-        ul.append(li);
-    }
-}
-
-document.body.classList.add('toc2');
-document.body.classList.add('toc-left');
-nav.append(ul);
-header.prepend(nav);
-</script>
 <script src="js/vendor/jquery.js"></script>
 <script src="js/foundation.min.js"></script>
 <script>
