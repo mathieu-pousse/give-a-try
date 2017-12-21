@@ -1,0 +1,8 @@
+[[general-guidelines]]
+= General Guidelines
+
+The titles are marked with the corresponding labels: {MUST},
+{SHOULD}, {MAY}.
+
+[#100]
+== {MUST} Follow API First Principle

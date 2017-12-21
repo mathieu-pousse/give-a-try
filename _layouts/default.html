@@ -13,26 +13,12 @@
     <link rel="stylesheet" href="{{page.root}}css/font-awesome.css">
     <link rel="stylesheet" href="{{page.root}}css/coderay.css">
     <link rel="stylesheet" href="{{page.root}}css/asciidoctor.css">
+    <link rel="stylesheet" href="{{page.root}}css/ouest-france.css">
     <script src="{{page.root}}js/vendor/modernizr.js"></script>
     <script src="{{page.root}}js/toc.js"></script>
 </head>
 <body>
 
-
-<!-- Nav Bar -->
-
-<nav class="top-bar" data-topbar>
-    <ul class="title-area">
-        <!-- Title Area -->
-        <li class="name">
-            <h1>
-                <a href="{{page.root}}">{{site.title}}</a>
-            </h1>
-        </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-    </ul>
-</nav>
-<!-- End Nav -->
 
 
 <!-- Main Page Content and Sidebar -->
@@ -40,35 +26,13 @@
 <div class="row">
 
     <!-- Main Blog Content -->
-    <div class="large-9 columns" role="content">
+    <div class="large-12 columns" role="content">
 
         {{ content }}
 
     </div>
 
     <!-- End Main Content -->
-
-    <!-- Sidebar -->
-
-    <aside class="large-3 columns">
-
-        <h4>Posts</h4>
-        <ul id="posts" class="posts nav">
-            {% for post in site.posts limit: 5 %}
-            <li><a href=".{{ post.url }}">{{ post.navtitle }}</a></li>
-            {% endfor %}
-        </ul>
-
-        <div class="panel">
-            <h5>Featured</h5>
-
-            <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon
-                nulla pork belly cupidatat meatloaf cow.</p>
-        </div>
-
-    </aside>
-
-    <!-- End Sidebar -->
 </div>
 
 <!-- End Main Content and Sidebar -->
@@ -81,11 +45,25 @@
         <hr>
         <div class="row">
             <div class="large-12 columns">
-                <p>Footer</p>
+                <p>Ouest-France</p>
             </div>
         </div>
     </div>
 </footer>
+
+
+<!-- Adds rule id as a postfix to all rule titles -->
+<script>
+var ruleIdRegEx = /(\d)+/;
+var h3headers = document.getElementsByTagName("h3");
+for (var i = 0; i < h3headers.length; i++) {
+    var header = h3headers[i];
+    if (header.id && header.id.match(ruleIdRegEx)) {
+        var a = header.getElementsByTagName("a")[0]
+        a.innerHTML += " [" + header.id + "]";
+    }
+}
+</script>
 
 <script src="{{page.root}}js/vendor/jquery.js"></script>
 <script src="{{page.root}}js/foundation.min.js"></script>
