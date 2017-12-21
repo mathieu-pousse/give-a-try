@@ -95,6 +95,75 @@ interpreted as described in <a href="https://www.ietf.org/rfc/rfc2119.txt">RFC
 </div>
 <div class="sect2">
 <h3 id="100"><a class="link" href="#100"><span class="must-keyword"><strong>Must:</strong></span> Follow API First Principle</a></h3>
+<!-- Adds rule id as a postfix to all rule titles -->
+<script>
+var ruleIdRegEx = /(\d)+/;
+var h3headers = document.getElementsByTagName("h3");
+for (var i = 0; i < h3headers.length; i++) {
+    var header = h3headers[i];
+    if (header.id && header.id.match(ruleIdRegEx)) {
+        var a = header.getElementsByTagName("a")[0]
+        a.innerHTML += " [" + header.id + "]";
+    }
+}
+</script>
+
+<!-- Add table of contents anchor and remove document title -->
+<script>
+var toc = document.getElementById('toc');
+var div = document.createElement('div');
+div.id = 'table-of-contents';
+toc.parentNode.replaceChild(div, toc);
+div.appendChild(toc);
+var ul = toc.childNodes[3];
+ul.removeChild(ul.childNodes[1]);
+</script>
+
+<!-- Adds sidebar navigation -->
+<script>
+var header = document.getElementById('header');
+var nav = document.createElement('div');
+nav.id = 'toc';
+nav.classList.add('toc2');
+var title = document.createElement('div');
+title.id = 'toctitle';
+
+var link = document.createElement('a');
+link.innerText = 'API Guidelines';
+link.href = '#';
+
+title.append(link);
+nav.append(title);
+
+var ul = document.createElement('ul');
+ul.classList.add('sectlevel1');
+
+var link = document.createElement('a');
+link.innerHTML = 'Table of Contents';
+link.href = '#table-of-contents';
+li = document.createElement('li');
+li.append(link);
+ul.append(li);
+
+var link, li;
+var h2headers = document.getElementsByTagName('h2');
+for (var i = 1; i < h2headers.length; i++) {
+    var a = h2headers[i].getElementsByTagName("a")[0];
+    if (a !== undefined) {
+        link = document.createElement('a');
+        link.innerHTML = a.innerHTML;
+        link.href = a.hash;
+        li = document.createElement('li');
+        li.append(link);
+        ul.append(li);
+    }
+}
+
+document.body.classList.add('toc2');
+document.body.classList.add('toc-left');
+nav.append(ul);
+header.prepend(nav);
+</script>
 
 </div>
 </div>
